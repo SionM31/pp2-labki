@@ -1,0 +1,11 @@
+# Example 1
+if 5 > 2:
+  print("Five is greater than two!")
+if 5 > 2:
+        print("Five is greater than two!") 
+
+"""
+if 5 > 2:
+print("Five is greater than two!")
+this is an error
+"""
