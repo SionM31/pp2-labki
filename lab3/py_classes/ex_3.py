@@ -6,7 +6,7 @@
  The Rectangle class has a method which can compute the area.
 """
 
-from ex_2 import *
+from ex_2 import Shape
 
 class Rectangle(Shape):
     def __init__(self, length, width):

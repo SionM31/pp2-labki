@@ -24,5 +24,5 @@ class Square(Shape):
 
 
 
-x = Square(2)
-x.get_area()
+#x = Square(2)
+#x.get_area()
