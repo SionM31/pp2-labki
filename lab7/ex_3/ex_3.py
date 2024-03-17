@@ -38,7 +38,7 @@ while run:
     
     keys = pygame.key.get_pressed()
 
-    right, left, up, down = 0, 0, 0, 0
+    right, left, up, down = False, False, False, False
 
     right = keys[pygame.K_RIGHT]
     left = keys[pygame.K_LEFT]
@@ -52,17 +52,13 @@ while run:
 
     if pos[0] + xadd >= r and pos[0] + xadd <= W - r:
         pos[0] += xadd
-    elif pos[0] + xadd < r:
-        pos[0] = r
-    elif pos[0] + xadd > W - r:
-        pos[0] = W - r
+    else:
+        pos[0] = min(max(r, pos[0] + xadd), W - r)
     
     if pos[1] + yadd >= r and pos[1] + yadd <= H - r:
         pos[1] += yadd
-    elif pos[1] + yadd < r:
-        pos[1] = r
-    elif pos[1] + yadd > H - r:
-        pos[1] = H - r
+    else:
+        pos[1] = min(max(r, pos[1] + yadd), H - r)
 
     pygame.draw.circle(display, RED, pos, r)
 
