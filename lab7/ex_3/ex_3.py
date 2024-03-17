@@ -4,7 +4,6 @@
 
 import pygame
 import sys
-import math
 
 
 # Initialization of programm
