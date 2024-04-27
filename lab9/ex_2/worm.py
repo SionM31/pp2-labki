@@ -8,6 +8,8 @@ class Worm(GameObject):
         self.DX = 0
         self.DY = 0
 
+        self.head_color = (0, 0, 100)
+
         self.level = 1
         self.load_level()
 
@@ -59,3 +61,14 @@ class Worm(GameObject):
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT and self.DX != 1:
                 self.DX = -1
                 self.DY = 0
+    
+    def draw(self, screen):
+        i = 0
+        for point in self.points:
+            if i == 0:
+                pygame.draw.rect(screen, self.head_color, pygame.Rect(point.X, point.Y, self.tile_width, self.tile_width))
+                pygame.draw.rect(screen, (0, 0, 0), pygame.Rect(point.X, point.Y, self.tile_width, self.tile_width), 1)
+            else:
+                pygame.draw.rect(screen, self.color, pygame.Rect(point.X, point.Y, self.tile_width, self.tile_width))
+                pygame.draw.rect(screen, (0, 0, 0), pygame.Rect(point.X, point.Y, self.tile_width, self.tile_width), 1)
+            i += 1
