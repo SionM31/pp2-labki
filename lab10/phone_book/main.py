@@ -58,7 +58,7 @@ try:
 
     #Choose request
 
-    insert_console()
+    #insert_console()
     #insert_csv()
     #select()
     #create()
